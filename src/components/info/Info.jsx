@@ -11,7 +11,7 @@ function Info()
     
 
     <div className={`${classes.info}`}>
-    <img src="src/assets/thumbnail.jpeg"></img>
+    <img src="src/assets/BMO!.jpeg"></img>
 
 
     <h1>Web Developer & Algorithm Enthusiast</h1>
