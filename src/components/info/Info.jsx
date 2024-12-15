@@ -18,7 +18,7 @@ function Info()
     <p>
     I specialize in building efficient, user-friendly web applications using React and Node.js. Skilled in C++, 
     web development, and data structures, I love solving complex problems and creating intuitive solutions. 
-    I'm also exploring algorithm visualization and enhancing my design skills."
+    I'm also exploring algorithm visualization and enhancing my design skills.
     </p>
 
 
