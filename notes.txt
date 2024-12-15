@@ -1,0 +1,14 @@
+/home=> / page contain link to the blog. 
+
+Compnents: Header, About, posts
+
+/blog contains the blogs
+
+
+/PostCard component contains date,thumbnail, title
+
+
+ PostPage /blog/:postId
+
+
+Dark: component for dark mode
