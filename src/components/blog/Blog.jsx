@@ -55,8 +55,9 @@ function Blog()
                 key={post.id} 
                 date={post.created_at} 
                 title={post.title} 
-                thumbnail="src/assets/wall.png"
+                thumbnail="../src/assets/wall.png"
                 description={post.content} 
+                postId = {post.id}
               />
             ))}
           </div>
