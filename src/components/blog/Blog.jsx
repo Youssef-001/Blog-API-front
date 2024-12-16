@@ -3,6 +3,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Post from '../post/Post'
 import classes from './blog.module.css'
+import Header from '../header/Header'
 
 function Blog()
 {
@@ -44,6 +45,10 @@ function Blog()
     
     if (data) {
         return (
+            <>
+            <Header/>
+            <h1>My blogs</h1>
+
           <div className={`${classes.posts}`}>
             {data.map((post) => (
               <Post 
@@ -55,6 +60,7 @@ function Blog()
               />
             ))}
           </div>
+          </>
         );
       }
 }
