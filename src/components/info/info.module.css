@@ -28,7 +28,7 @@ h1{
     gap: 1rem
 }
 
-img{
+.avatar{
     border-radius: 50%;
     max-width: 20rem;
 

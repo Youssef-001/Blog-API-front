@@ -1,0 +1,22 @@
+.thumbnail{
+    
+    height: auto;
+    /* object-fit: cover; */
+    width: 500px;
+    margin-top: 15px;
+
+}
+
+p{
+    width: fit-content
+}
+
+
+.post{
+    /* max-width: 50%; */
+}
+
+.link {
+    color: #7fb4c3;
+    text-decoration: underline;
+}

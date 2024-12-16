@@ -1,7 +1,8 @@
 import React from 'react';
 
 import {useState, useEffect} from 'react';
-
+import Post from '../post/Post'
+import classes from './blog.module.css'
 
 function Blog()
 {
@@ -38,6 +39,25 @@ function Blog()
     }
     fetchPosts();
    },[])
+
+   if (data) {
+    
+    if (data) {
+        return (
+          <div className={`${classes.posts}`}>
+            {data.map((post) => (
+              <Post 
+                key={post.id} 
+                date={post.created_at} 
+                title={post.title} 
+                thumbnail="src/assets/wall.png"
+                description={post.content} 
+              />
+            ))}
+          </div>
+        );
+      }
+}
 
 }
 
