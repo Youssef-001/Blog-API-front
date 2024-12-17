@@ -6,6 +6,7 @@ import Blog from './components/blog/Blog.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PostPage from './components/postPage/PostPage.jsx'
 import CreatePost from './components/CreatePost/CreatePost.jsx'
+import Login from './components/login/Login.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
 {
   path: "blog/create",
   element: <CreatePost/>
+},
+
+{
+  path: "login",
+  element: <Login></Login>
 }
 ]);
 

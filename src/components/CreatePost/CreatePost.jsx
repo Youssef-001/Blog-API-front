@@ -8,7 +8,7 @@ function CreatePost()
     return (
         <main>
         <h1>Write a New Post</h1>
-        <form action="/posts" method="POST">
+        <form action="http://localhost:4000/posts" method="POST">
         
         <div>
         <label htmlFor="title">Title</label>
