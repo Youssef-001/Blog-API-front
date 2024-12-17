@@ -16,6 +16,7 @@ function Login()
         });
         const data = await response.json();
         console.log(data);
+
     
         if (data.access_token) {
           localStorage.setItem("token", data.access_token); // Store token in localStorage
