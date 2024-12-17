@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
-
+import classes from './postpage.module.css'
 import {useState, useEffect} from 'react'
+import Header from '../header/Header'
  function PostPage()
 {
     const { id } = useParams();
@@ -49,9 +50,15 @@ import {useState, useEffect} from 'react'
 if (post){
 return (
     <>
-    
+    <Header/>
+<main>
 
     <time dateTime={[post.created_at]}>{post.created_at}</time>
+
+    <h1>{post.title}</h1>
+
+    <p>{post.content}</p>
+</main>
 
     </>
 )}
