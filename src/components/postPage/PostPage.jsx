@@ -1,14 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import classes from './postpage.module.css'
 import {useState, useEffect} from 'react'
 import Header from '../header/Header'
 import ContentComponent from '../ContentComponent'
 import { jwtDecode } from "jwt-decode";
+import { Link } from 'react-router-dom';
 
  function PostPage()
 {
     const { id } = useParams();
     const [post, setPost] = useState(null);
+    const navigate = useNavigate();
+
 
     const [control,setControl] = useState(true);
 
@@ -84,11 +87,9 @@ return (
 
 
 {control ? (
-                    <div>
-                        <ul>
-                            <li><a href="/blog">edit</a></li>
-                            <li><a href="/edit">delete</a></li>
-                        </ul>
+                    <div className={`${classes.control_items}`}>
+                        <Link to={"/blog/edit/" + id} state={{oldContent: post.content, oldTitle:post.title, oldCover:post.cover}} >Edit</Link>
+                        <Link to="">Delete</Link>
                     </div>
                 ) : null}
 

@@ -40,10 +40,32 @@ button svg {
   }
   
   ul {
-    
-
+    list-style-type: none;
   }
   
   li {
 gap: 1rem;
+  }
+
+  .control_items{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top : 0.4rem;
+  }
+
+  .control_items a{
+    background-color: #353935;
+    font-size: 1rem;
+    width: 3rem;
+    padding: 4px 8px;
+  }
+
+ 
+  
+
+  .control_items a:hover {
+    background-color: #4a4e48; /* Lighter shade for hover effect */
+    color: #f1f1f1; /* Optional: change text color on hover */
   }

@@ -28,6 +28,12 @@ const router = createBrowserRouter([
 },
 
 {
+  path: "blog/edit/:id",
+  element: <PrivateRouter><CreatePost/></PrivateRouter>
+}
+,
+
+{
   path: "blog/login",
   element: <Login></Login>
 }
