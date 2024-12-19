@@ -55,16 +55,16 @@ function Blog()
             <h1>My blogs</h1>
 
           <div className={`${classes.posts}`}>
-            {data.map((post) => (
+            {data.map((post)  => { let cover = `http://localhost:4000/${post.cover}`;return(
               <Post 
                 key={post.id} 
                 date={post.created_at} 
                 title={post.title} 
-                thumbnail="../src/assets/wall.png"
+                thumbnail={cover}
                 description={post.title} 
                 postId = {post.id}
               />
-            ))}
+            )})}
           </div>
           </>
         );
