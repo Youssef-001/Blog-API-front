@@ -18,6 +18,8 @@ function Post({date, thumbnail, title, description, postId})
         
         </a>
 
+        <h2>{title}</h2>
+
 
     </div>)
 
