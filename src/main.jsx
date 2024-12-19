@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 },
 
 {
-  path: "login",
+  path: "blog/login",
   element: <Login></Login>
 }
 ]);

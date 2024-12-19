@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
-export default function TinyMCE() {
+export default function TinyMCE({handleEditorChange}) {
   const editorRef = useRef(null);
   const log = () => {
     if (editorRef.current) {
@@ -14,6 +14,7 @@ export default function TinyMCE() {
         apiKey='cn1ckum0bb04d33l4p66f54tjjo70o4jup207fmzp1jniexm'
         onInit={(_evt, editor) => editorRef.current = editor}
         initialValue="<p>This is the initial content of the editor.</p>"
+        onEditorChange={handleEditorChange}
         
         init={{
           plugins: 'autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount codesample',

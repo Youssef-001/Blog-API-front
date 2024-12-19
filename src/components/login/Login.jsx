@@ -1,11 +1,15 @@
 import react from 'react'
 import classes from './login.module.css'
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Login()
 {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate(); // Hook for navigation
 
 
     const handleLogin = async () => {
@@ -21,7 +25,11 @@ function Login()
         if (data.access_token) {
           localStorage.setItem("token", data.access_token); // Store token in localStorage
           console.log("Token saved!");
+          navigate('/blog')
+
         }
+
+
       };
 
     return <>

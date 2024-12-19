@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import classes from './postpage.module.css'
 import {useState, useEffect} from 'react'
 import Header from '../header/Header'
+import ContentComponent from '../ContentComponent'
  function PostPage()
 {
     const { id } = useParams();
@@ -57,7 +58,7 @@ return (
 
     <h1>{post.title}</h1>
 
-    <p>{post.content}</p>
+    <ContentComponent description={post.content}/>
 </main>
 
     </>
