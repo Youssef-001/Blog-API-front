@@ -69,7 +69,7 @@ function CreatePost() {
                     <Editor handleEditorChange={handleEditorChange}></Editor>
                 </div>
 
-                <button type="submit">Publish Post</button>
+                <button className={`${classes.publish-btn}`} type="submit">Publish Post</button>
             </form>
         </main>
     );

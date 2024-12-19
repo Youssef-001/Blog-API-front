@@ -54,7 +54,7 @@ function Login()
             />
             </div>
 
-            <button type="submit" onClick={handleLogin}>Log in</button>
+            <button className={`${classes.btn}`} type="submit" onClick={handleLogin}>Log in</button>
         
         </form>
     </main>

@@ -18,7 +18,7 @@ form{
     width: 60%;
 }
 
-button{
+.publish-btn{
     color: white;
     background-color: rgb(28,78,216);
     border-radius: 8px;

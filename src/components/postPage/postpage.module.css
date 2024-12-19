@@ -5,3 +5,45 @@ main{
     flex-direction: column;
     margin-top: 5rem;
 }
+
+img{
+    width: 100%;
+    object-fit:contain;
+}
+
+.div_controls{
+    width: 2rem;
+    height: 2rem;;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* margin-top: 2rem; */
+}
+
+button{
+    background-color: transparent;
+    all:unset;
+    cursor: pointer;
+}
+
+button svg {
+    width: 2rem;
+    height: 2rem;
+  } 
+
+  ul{
+    color:white;
+  }
+  
+  ul {
+    
+
+  }
+  
+  li {
+gap: 1rem;
+  }

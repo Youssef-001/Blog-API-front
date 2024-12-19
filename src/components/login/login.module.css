@@ -4,7 +4,7 @@ body{
 }
 
 
-button{
+.btn{
     background-color: #8B5CF6;
 
     padding: 12px;
@@ -38,6 +38,7 @@ input{
     margin-top: 10px
 }
 
-button{
+.btn{
     width:100%;
+    text-align: center;
 }
