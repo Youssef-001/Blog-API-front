@@ -27,3 +27,15 @@ form{
     margin-left: auto;
     border: 1px solid rgb(28,78,216);
 }
+
+/* Disabled button style */
+.publish_btn:disabled {
+    background-color: rgb(200, 200, 255); /* Light blue background */
+    color: #a9a9a9; /* Dark grey text */
+    cursor: not-allowed; /* Indicates that the button is not interactive */
+  }
+
+  .publish_btn:hover {
+    background-color: rgb(20, 60, 180); /* Slightly darker shade on hover */
+  }
+  

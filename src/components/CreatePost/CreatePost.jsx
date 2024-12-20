@@ -1,8 +1,9 @@
 import classes from './create-post.module.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { jwtDecode } from "jwt-decode";
 import Editor from './TinyMCE';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function CreatePost() {
@@ -11,10 +12,23 @@ function CreatePost() {
     const [title, setTitle] = useState(location.state?location.state.oldTitle : '');
     const [cover, setCover] = useState(location.state? location.state.oldCover : ''); // Ensure the cover is null initially, and the file is stored here
     const [content, setContent] = useState(location.state ? location.state.oldContent : '');
+    const [submitButton, setSubmitButton] = useState(false);
     let url_parts = location.pathname.split('/');
     let id = url_parts[url_parts.length-1];
+    const navigate = useNavigate();
 
-    
+    const submitRef = useRef(null);
+    const uploadRef = useRef(null);
+
+
+
+    // if (fileInput && fileInput.files && fileInput.files.length === 0) {
+    //     setSubmitButton(false)
+    //    console.log(submitRef.current);
+    //   } else if (fileInput && fileInput.files && fileInput.files.length > 0) {
+    //     setSubmitButton(true);
+    //   }
+
 
     console.log(id);
     const handleEditorChange = (newContent) => {
@@ -28,7 +42,19 @@ function CreatePost() {
 
     const handleCoverChange = (e) => {
         const file = e.target.files[0];
+        const fileInput = uploadRef.current;
+        debugger;
+        
         setCover(file); // Update local state
+            console.log(uploadRef.current)
+            if (!submitButton) {
+                setSubmitButton(true); // Disable button only if necessary
+              console.log(submitRef.current); // Log reference to the button
+            
+          } else   {
+            if (submitButton) {
+                setSubmitButton(false); // Enable button only if necessary
+            }}
     }
 
     const handleSubmit = async (e) => {
@@ -71,9 +97,10 @@ function CreatePost() {
                 const data = await response.json();
             }
         }
-        console.log(formData);
-    };
 
+        navigate('/blog')
+    };
+    
     return (
         <main>
             <h1>Write a New Post</h1>
@@ -97,6 +124,7 @@ function CreatePost() {
                         onChange={handleCoverChange} // Get the file object from the input
                         name="cover"
                         id="cover"
+                        ref={uploadRef}
                     />
                 </div>
 
@@ -105,7 +133,8 @@ function CreatePost() {
                     <Editor handleEditorChange={handleEditorChange} initialValue={content || ''}></Editor>
                 </div>
 
-                <button className={`${classes.publish_btn}`} type="submit">Publish Post</button>
+                {submitButton ? <button ref={submitRef} className={`${classes.publish_btn}`} type="submit">Publish Post</button> : <button disabled ref={submitRef} className={`${classes.publish_btn}`} type="submit">Publish Post</button>}
+                
             </form>
         </main>
     );

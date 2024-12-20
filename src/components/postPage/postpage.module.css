@@ -8,7 +8,7 @@ main{
 
 img{
     width: 100%;
-    object-fit:contain;
+    object-fit:cover;
 }
 
 .div_controls{
