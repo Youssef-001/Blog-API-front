@@ -8,31 +8,51 @@ import { useLocation } from 'react-router-dom';
 function CreatePost() {
     const location = useLocation(); // Get location object
     console.log(location.state)
-    const [title, setTitle] = useState(location.state.oldTitle || '');
-    const [cover, setCover] = useState(location.state.oldCover || ''); // Ensure the cover is null initially, and the file is stored here
-    const [content, setContent] = useState(location.state.oldContent || '');
-    console.log(location.pathname)
+    const [title, setTitle] = useState(location.state?location.state.oldTitle : '');
+    const [cover, setCover] = useState(location.state? location.state.oldCover : ''); // Ensure the cover is null initially, and the file is stored here
+    const [content, setContent] = useState(location.state ? location.state.oldContent : '');
+    let url_parts = location.pathname.split('/');
+    let id = url_parts[url_parts.length-1];
+
+    
+
+    console.log(id);
     const handleEditorChange = (newContent) => {
         setContent(newContent); // Update state with editor value
         console.log("Content was updated:", newContent);
     };
 
+    const handleTitleChange = (e) => {
+        setTitle(e.target.value); // Update local state
+    }
+
+    const handleCoverChange = (e) => {
+        const file = e.target.files[0];
+        setCover(file); // Update local state
+    }
+
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault(); 
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('content', content);
+        formData.append('cover', cover);
+
         
         let token = localStorage.getItem('token');
         const decodedToken = jwtDecode(token);
-
+        let response;
         if (decodedToken.username === 'admin') {
-            const formData = new FormData();
-            formData.append("title", title);
-            formData.append("content", content);
-            if (cover) {
-                formData.append("cover", cover); // Append the file to the form data
-            }
+            console.log(location.pathname)
+
             if (location.pathname.includes('/edit'))
             {
-                const response = await fetch("http://localhost:4000/edit/posts", {
+                debugger;
+
+                for (var key of formData.entries()) {
+                    console.log(key[0] + ', ' + key[1]);}
+
+                 response = await fetch(`http://localhost:4000/posts/${id}`, {
                     method: "PUT",
                     headers: { "Authorization": `Bearer ${token}` },
                     body: formData, // Send the FormData as the body
@@ -40,7 +60,8 @@ function CreatePost() {
             }
             
             else{
-            const response = await fetch("http://localhost:4000/posts", {
+
+             response = await fetch("http://localhost:4000/posts", {
                 method: "POST",
                 headers: { "Authorization": `Bearer ${token}` },
                 body: formData, // Send the FormData as the body
@@ -48,9 +69,9 @@ function CreatePost() {
 
             if (response) {
                 const data = await response.json();
-                console.log(data);
             }
         }
+        console.log(formData);
     };
 
     return (
@@ -62,7 +83,7 @@ function CreatePost() {
                     <input
                         value={title}
                         type="text"
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={handleTitleChange}
                         name="title"
                         placeholder="Enter post title"
                     />
@@ -73,7 +94,7 @@ function CreatePost() {
                     <input
                         
                         type="file"
-                        onChange={(e) => setCover(e.target.files[0])} // Get the file object from the input
+                        onChange={handleCoverChange} // Get the file object from the input
                         name="cover"
                         id="cover"
                     />
@@ -91,3 +112,8 @@ function CreatePost() {
 }
 
 export default CreatePost;
+
+
+
+
+//TODO:  formData empty
