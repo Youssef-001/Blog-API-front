@@ -66,6 +66,29 @@ import { Link } from 'react-router-dom';
     },[]
 )
 
+
+async function handleDelete() {
+    try {
+        const res = await fetch(`http://localhost:4000/posts/${id}`, {
+            method: 'DELETE',
+            headers: { "Authorization": `Bearer ${token}` },
+
+        });
+
+        // Check if the response was successful
+        if (res.ok) {
+            console.log('Post deleted successfully');
+            navigate('/blog'); // Navigate to blog page
+        } else {
+            console.error('Failed to delete the post');
+            // Optionally handle the error (e.g., show a message to the user)
+        }
+    } catch (error) {
+        console.error('Error during deletion:', error);
+        // Handle any network or unexpected errors here
+    }
+}
+
 if (post){
 return (
     <>
@@ -89,7 +112,7 @@ return (
 {control ? (
                     <div className={`${classes.control_items}`}>
                         <Link to={"/blog/edit/" + id} state={{oldContent: post.content, oldTitle:post.title, oldCover:post.cover}} >Edit</Link>
-                        <Link to="">Delete</Link>
+                        <Link onClick={(e)=>{handleDelete(e)}}>Delete</Link>
                     </div>
                 ) : null}
 
