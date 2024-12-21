@@ -6,7 +6,7 @@ function Header()
     return <>
     
     <nav>
-        <h2>portifolio.dev</h2>
+        <h2 className={`${classes.name}`}>Yusef0x1.dev</h2>
 
         <div className={`${classes.links}`}>
             <a href="/blog">/blog</a>

@@ -8,6 +8,7 @@ import PostPage from './components/postPage/PostPage.jsx'
 import CreatePost from './components/CreatePost/CreatePost.jsx'
 import Login from './components/login/Login.jsx'
 import PrivateRouter from './components/PrivateRouter.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById('root')).render(
+  
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,

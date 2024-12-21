@@ -5,13 +5,29 @@ import Header from '../header/Header'
 import ContentComponent from '../ContentComponent'
 import { jwtDecode } from "jwt-decode";
 import { Link } from 'react-router-dom';
-
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css'; // Import the Atom One Dark theme
  function PostPage()
 {
     const { id } = useParams();
     const [post, setPost] = useState(null);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (post) {
+          const codeBlocks = document.querySelectorAll('pre code');
+      
+          codeBlocks.forEach((block) => {
+            // Assign the class dynamically if not already present
+            if (!block.classList.contains('hljs')) {
+              block.classList.add('hljs', 'language-javascript');
+            }
+            hljs.highlightElement(block); // Apply highlighting to the specific block
+          });
+        }
+      }, [post]);
+      
+      
 
     const [control,setControl] = useState(false);
 
@@ -43,7 +59,9 @@ import { Link } from 'react-router-dom';
        
                    }
                    let fetchedPost = await res.json();
+        
                    setPost(fetchedPost);
+
                    setError(null);
                }
                catch(err)
@@ -89,6 +107,8 @@ async function handleDelete() {
     }
 }
 
+
+
 if (post){
 return (
     <>
@@ -126,6 +146,7 @@ return (
 
     <h1>{post.title}</h1>
 
+                
     <ContentComponent description={post.content}/>
 </main>
 

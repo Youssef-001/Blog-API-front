@@ -3,6 +3,7 @@ import {useState} from 'react'
 import classes from './post.module.css'
 import ContentComponent from '../ContentComponent';
 import ReactLoading from 'react-loading';
+import hljs from 'highlight.js';
 
 const Example = ({ type, color }) => (
     <ReactLoading type={type} color={color} height={200} width={200} />
@@ -10,6 +11,7 @@ const Example = ({ type, color }) => (
 
 function Post({date, thumbnail, title, description, postId})
 {
+
     const [isLoading, setIsLoading] = useState(true);
 
     const handleImageLoad = () => {
