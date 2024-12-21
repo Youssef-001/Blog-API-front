@@ -37,7 +37,7 @@ function Login()
     <main>
         <h2>Login</h2>
 
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form  className={`${classes.login_form}`} onSubmit={(e) => e.preventDefault()}>
         
             <div>
             <label htmlFor="username">Username</label>

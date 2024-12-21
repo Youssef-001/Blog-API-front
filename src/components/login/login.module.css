@@ -13,7 +13,7 @@ body{
 
 
 
-form{
+.login_form{
     display:flex;
     flex-direction: column;
     gap: 3rem;

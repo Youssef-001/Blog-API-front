@@ -7,11 +7,13 @@ import { jwtDecode } from "jwt-decode";
 import { Link } from 'react-router-dom';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css'; // Import the Atom One Dark theme
+import Comments from '../comments/Comments'
  function PostPage()
 {
     const { id } = useParams();
     const [post, setPost] = useState(null);
     const navigate = useNavigate();
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         if (post) {
@@ -75,10 +77,30 @@ import 'highlight.js/styles/atom-one-dark.css'; // Import the Atom One Dark them
                }
         }
 
-        getPost();
+        async function getComments()
+        {
+            try {
+                let res = await fetch(`http://localhost:4000/comments/${id}`);
+
+                if (!res.ok)
+                    {
+                        throw new Error(`HTTP error: Status ${response.status}`);
         
+                    }
 
+                let fetchedComments = await res.json();
+                setComments(fetchedComments);
 
+            }
+            catch(err)
+            {
+                console.error(err);
+            }
+        }
+
+        getPost();
+        getComments();
+        
 
         
     },[]
@@ -147,7 +169,21 @@ return (
     <h1>{post.title}</h1>
 
                 
+<article>
     <ContentComponent description={post.content}/>
+    
+    <section>
+
+<div className={`${classes.comments}`}>
+
+<Comments comments={comments}/>
+
+
+</div>
+</section>
+</article>
+
+
 </main>
 
 
