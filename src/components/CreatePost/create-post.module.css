@@ -5,7 +5,7 @@ form{
 }
 
 input{
-    width: 100%;
+    width: 70%;
     padding: 12px;
     border-radius: 8px;
     font-size: 1rem;
@@ -39,3 +39,72 @@ form{
     background-color: rgb(20, 60, 180); /* Slightly darker shade on hover */
   }
   
+
+  input[type="file"] {
+    display: none;
+  }
+  
+  .custom_file_upload {
+    border: 2px solid #007bff;  /* Blue border */
+    background-color: #f8f9fa;   /* Light background */
+    color: #007bff;              /* Blue text */
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;          /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    width: 100%;  /* Smooth transition for hover effect */
+  }
+  
+  .custom_file_upload:hover {
+    background-color: #007bff;   /* Dark blue on hover */
+    color: #ffffff;              /* White text on hover */
+    border-color: #0056b3;       /* Darker blue border on hover */
+  }
+  
+  .custom_file_upload:active {
+    background-color: #0056b3;   /* Even darker blue on click */
+    border-color: #004085;       /* Darker border on click */
+  }
+  
+
+  .custom_file_upload {
+    border: 2px solid #007bff;
+    background-color: #f8f9fa;
+    color: #007bff;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .custom_file_upload:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+  }
+  
+  .custom_file_upload:active {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  .custom_file_upload:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+  }
+  
+  /* Indication of file selection */
+  .custom_file_upload.file-selected {
+    background-color: #28a745;   /* Green background when a file is selected */
+    color: #ffffff;              /* White text */
+    border-color: #218838;       /* Darker green border */
+  }
+  
+  .custom_file_upload.file-selected:hover {
+    background-color: #218838;   /* Darker green on hover */
+    border-color: #1e7e34;       /* Darker green border on hover */
+  }

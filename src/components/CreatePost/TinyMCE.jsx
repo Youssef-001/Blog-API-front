@@ -26,7 +26,7 @@ export default function TinyMCE({handleEditorChange, initialValue}) {
           // initialValue: {initialValue},
 
           // height: 500,
-          // width: 800
+          maxWidth: '600px'
         }}
       />
 
