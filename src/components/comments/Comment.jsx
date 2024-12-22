@@ -1,12 +1,20 @@
 import classes from './comment.module.css'
-import MyImage from '/home/yusef0x1/Programming/Odin/blog-API-front/src/assets/avatar.jpeg';
+import avatar1 from '/home/yusef0x1/Programming/Odin/blog-API-front/src/assets/avatar.jpeg';
+import avatar2 from '/home/yusef0x1/Programming/Odin/blog-API-front/src/assets/avatar2.jpeg';
+import avatar3 from '/home/yusef0x1/Programming/Odin/blog-API-front/src/assets/avatar3.jpeg';
+import avatar4 from '/home/yusef0x1/Programming/Odin/blog-API-front/src/assets/avatar4.jpeg';
+
+const randomNumber = Math.floor(Math.random() * 4) + 1;
+
+
+
 
 function Comment({content, author, date})
 {
     return (
         <div className={`${classes.comment}`}>
 
-            <img src={MyImage} alt="" className={`${classes.avatar}`} />
+            <img src={avatar1} alt="" className={`${classes.avatar}`} />
             <div >
                 <div className={`${classes.comment_info}`}>
                 <h2>{author}</h2>

@@ -20,7 +20,7 @@ function Blog()
    useEffect(() => {
     async function fetchPosts() {
         try {
-            const response = await fetch(`http://localhost:4000/posts?page=${page}`);
+            const response = await fetch(`http://localhost:4001/posts?page=${page}`, {credentials: 'include',});
             if (!response.ok)
             {
                 throw new Error(`HTTP error: Status ${response.status}`);
@@ -55,7 +55,7 @@ function Blog()
             <h1>My blogs</h1>
 
           <div className={`${classes.posts}`}>
-            {data.map((post)  => { let cover = `http://localhost:4000/${post.cover}`;return(
+            {data.map((post)  => { let cover = `http://localhost:4001/${post.cover}`;return(
               <Post 
                 key={post.id} 
                 date={post.created_at} 

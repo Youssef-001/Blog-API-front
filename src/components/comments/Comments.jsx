@@ -17,7 +17,7 @@ function Comments({comments, setComments})
 
 
         let now = new Date();
-        let res = await fetch(`http://localhost:4000/comments/${id}`, {method: 'POST',  headers: {
+        let res = await fetch(`http://localhost:4001/comments/${id}`, {method: 'POST',  headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify({name: name, content: comment})});
 
@@ -35,7 +35,7 @@ function Comments({comments, setComments})
     return (
         <>
         
-        <h2>Comments (2)</h2>
+        <h2>Comments ({comments.length})</h2>
 
         <form  onSubmit={handleCommentSubmit}>
             <input onChange={(e) => {setName(e.target.value)}} name="name" type="text" placeholder='your name'/>
