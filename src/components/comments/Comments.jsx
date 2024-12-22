@@ -24,8 +24,8 @@ function Comments({comments, setComments})
         let newComment = await res.json();
         if (newComment){
         setComments([...comments,newComment])}
-        console.log(newComment); 
-        
+        setComment('');
+        setName('');
         
     }
 
@@ -35,8 +35,8 @@ function Comments({comments, setComments})
         <h2>Comments ({comments.length})</h2>
 
         <form  onSubmit={handleCommentSubmit}>
-            <input onChange={(e) => {setName(e.target.value)}} name="name" type="text" placeholder='your name'/>
-            <textarea rows="12" colr="20" onChange={(e) => {setComment(e.target.value)}} name="comment" id="comment" placeholder='Add a comment'></textarea>
+            <input value={name} onChange={(e) => {setName(e.target.value)}} name="name" type="text" placeholder='your name'/>
+            <textarea value={comment} rows="12" colr="20" onChange={(e) => {setComment(e.target.value)}} name="comment" id="comment" placeholder='Add a comment'></textarea>
 
             <button onClick={handleCommentSubmit} type="submit">Post comment</button>
         </form>

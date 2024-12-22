@@ -53,13 +53,14 @@ function CreatePost() {
 
     if (decodedToken.username === 'admin') {
       if (location.pathname.includes('/edit')) {
-        response = await fetch(`http://localhost:4000/posts/${id}`, {
+        response = await fetch(`http://localhost:4001/posts/${id}`, {
           method: "PUT",
+          credentials:'include',
           headers: { "Authorization": `Bearer ${token}` },
           body: formData,
         });
       } else {
-        response = await fetch("http://localhost:4000/posts", {
+        response = await fetch("http://localhost:4001/posts", {
           method: "POST",
           headers: { "Authorization": `Bearer ${token}` },
           body: formData,
@@ -71,7 +72,7 @@ function CreatePost() {
       }
     }
 
-    navigate('/blog');
+    navigate(`/blog/${id}`);
   };
 
   return (
