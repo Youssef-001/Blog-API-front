@@ -14,6 +14,7 @@ import Comments from '../comments/Comments'
     const [post, setPost] = useState(null);
     const navigate = useNavigate();
     const [comments, setComments] = useState([]);
+    
 
     useEffect(() => {
         if (post) {
