@@ -17,9 +17,10 @@
 
 }
 
-.comment button {
+.comment a {
     position: absolute;
-    right: 0;
+    right: 10px;
+    top: 10px;
     background-color: transparent;
 
 }

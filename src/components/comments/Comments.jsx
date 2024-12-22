@@ -17,18 +17,15 @@ function Comments({comments, setComments})
 
 
         let now = new Date();
-        let res = await fetch(`http://localhost:4001/comments/${id}`, {method: 'POST',  headers: {
+        let res = await fetch(`http://localhost:4001/comments/${id}`,  {credentials:'include', method: 'POST',headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify({name: name, content: comment})});
 
         let newComment = await res.json();
-        setComments([...comments,newComment])
+        if (newComment){
+        setComments([...comments,newComment])}
         console.log(newComment); 
         
-
-
-
-       
         
     }
 
@@ -51,6 +48,9 @@ function Comments({comments, setComments})
                         content={comment.content} 
                         author={comment.authorName} 
                         date={comment.created_at} 
+                        comment_id = {comment.id}
+                        setComments={setComments}
+                        comments={comments}
                     />
                 ))}
             </div>

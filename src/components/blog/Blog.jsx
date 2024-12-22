@@ -20,7 +20,7 @@ function Blog()
    useEffect(() => {
     async function fetchPosts() {
         try {
-            const response = await fetch(`http://localhost:4001/posts?page=${page}`, {credentials: 'include',});
+            const response = await fetch(`http://localhost:4001/posts?page=${page}`,);
             if (!response.ok)
             {
                 throw new Error(`HTTP error: Status ${response.status}`);
