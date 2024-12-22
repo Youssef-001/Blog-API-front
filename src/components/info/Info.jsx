@@ -23,9 +23,9 @@ function Info()
 
 
     <div className={`${classes.social}`}>
-        <a href="/linkedin">/Linkedin</a>
-        <a href="/github">/Github</a>
-        <a href="/leetcode">/Leetcode</a>
+        <a href="https://www.linkedin.com/in/yusef-samir-b2855021b/" target="_blank">/Linkedin</a>
+        <a href="https://github.com/Youssef-001" target="_blank">/Github</a>
+        <a href="https://leetcode.com/u/Yusef0x1/" target="_blank">/Leetcode</a>
     </div>
 
     </div>

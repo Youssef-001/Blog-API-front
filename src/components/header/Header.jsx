@@ -10,8 +10,8 @@ function Header()
 
         <div className={`${classes.links}`}>
             <a href="/blog">/blog</a>
-            <a href="/projects">/projects</a>
-            <a href="/chat">/chat</a>
+            <a href="#">/projects</a>
+            <a href="#">/chat</a>
         </div>
 
     </nav>

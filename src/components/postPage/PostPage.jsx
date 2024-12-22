@@ -53,7 +53,7 @@ import Comments from '../comments/Comments'
         async function getPost()
         {
             try{
-                let res = await fetch(`http://localhost:4001/posts/${id}`,);
+                let res = await fetch(`http://localhost:4001/posts/${id}`, {credentials:'include'});
        
                 if (!res.ok)
                    {
@@ -80,7 +80,7 @@ import Comments from '../comments/Comments'
         async function getComments()
         {
             try {
-                let res = await fetch(`http://localhost:4001/comments/${id}`);
+                let res = await fetch(`http://localhost:4001/comments/${id}`, {credentails:'include'});
 
                 if (!res.ok)
                     {
@@ -111,6 +111,7 @@ async function handleDelete() {
     try {
         const res = await fetch(`http://localhost:4001/posts/${id}`, {
             method: 'DELETE',
+            credentials:'include',
             headers: { "Authorization": `Bearer ${token}` }
 
         });

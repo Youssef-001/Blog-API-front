@@ -51,6 +51,7 @@ function Comments({comments, setComments})
                         comment_id = {comment.id}
                         setComments={setComments}
                         comments={comments}
+                        commentAuthor={comment.authorId}
                     />
                 ))}
             </div>

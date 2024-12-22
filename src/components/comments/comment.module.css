@@ -7,13 +7,15 @@
     border-radius: 6px;
     padding: 0.6rem;
     /* align-items: center; */
+    word-break: break-all;
 }
 
 .comment_info{
     display:flex;
     /* justify-content: center; */
     align-items: center;
-    gap: 1rem;
+    gap: 1rem;    flex-wrap: wrap;
+
 
 }
 
