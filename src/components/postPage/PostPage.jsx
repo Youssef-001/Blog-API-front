@@ -176,7 +176,7 @@ return (
 
 <div className={`${classes.comments}`}>
 
-<Comments comments={comments}/>
+<Comments setComments={setComments} comments={comments}/>
 
 
 </div>

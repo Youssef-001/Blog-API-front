@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react'
 import Comment from './Comment.jsx'
 import {useParams} from 'react-router-dom'
-function Comments({comments})
+function Comments({comments, setComments})
 {
 
     let [comment, setComment] = useState('');
@@ -16,10 +16,14 @@ function Comments({comments})
 
 
         let now = new Date();
-        let res = await fetch(`http://localhost:4000/comments/${id}`, {method: 'POST',  body: JSON.stringify({name: name, content: comment})});
+        let res = await fetch(`http://localhost:4000/comments/${id}`, {method: 'POST',  headers: {
+            'Content-Type': 'application/json'
+        }, body: JSON.stringify({name: name, content: comment})});
 
         let newComment = await res.json();
-        console.log(newComment);
+        setComments([...comments,newComment])
+        console.log(newComment); 
+        
 
 
 

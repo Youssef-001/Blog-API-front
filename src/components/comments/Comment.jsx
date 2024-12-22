@@ -8,12 +8,12 @@ function Comment({content, author, date})
             <img src="" alt="" />
             <div>
                 <div>
-                <h2>Alice</h2>
-                <time datetime="20:00">20:00</time>
+                <h2>{author}</h2>
+                <time datetime={date}>{date}</time>
 
                 </div>
 
-                <p>Great article! I especially loved the part about breaking problems into smaller parts.</p>
+                <p>{content}</p>
             </div>
 
         <button>
