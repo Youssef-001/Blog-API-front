@@ -1,13 +1,14 @@
-
+import classes from './comment.module.css'
+import MyImage from '/home/yusef0x1/Programming/Odin/blog-API-front/src/assets/avatar.jpeg';
 
 function Comment({content, author, date})
 {
     return (
-        <div>
+        <div className={`${classes.comment}`}>
 
-            <img src="" alt="" />
-            <div>
-                <div>
+            <img src={MyImage} alt="" className={`${classes.avatar}`} />
+            <div >
+                <div className={`${classes.comment_info}`}>
                 <h2>{author}</h2>
                 <time datetime={date}>{date}</time>
 

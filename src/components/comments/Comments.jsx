@@ -2,6 +2,7 @@ import React from 'react';
 import {useState} from 'react'
 import Comment from './Comment.jsx'
 import {useParams} from 'react-router-dom'
+import classes from './comments.module.css'
 function Comments({comments, setComments})
 {
 
@@ -43,7 +44,7 @@ function Comments({comments, setComments})
             <button onClick={handleCommentSubmit} type="submit">Post comment</button>
         </form>
 
-        <div>
+        <div className={`${classes.comments_div}`}>
                 {comments.map((comment, index) => (
                     <Comment 
                         key={index} 
