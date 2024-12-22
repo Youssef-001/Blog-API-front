@@ -36,7 +36,7 @@ function Comments({comments, setComments})
 
         <form  onSubmit={handleCommentSubmit}>
             <input onChange={(e) => {setName(e.target.value)}} name="name" type="text" placeholder='your name'/>
-            <textarea rows="12" colr="20" onChange={(e) => {setComment(e.target.value)}} name="comment" id="comment">Add a comment</textarea>
+            <textarea rows="12" colr="20" onChange={(e) => {setComment(e.target.value)}} name="comment" id="comment" placeholder='Add a comment'></textarea>
 
             <button onClick={handleCommentSubmit} type="submit">Post comment</button>
         </form>
