@@ -117,12 +117,34 @@ gap: 1rem;
 
   article{
     margin-top: 5rem;
-  }
+    line-break:auto;
+    box-sizing: border-box;
+    }
 
 
-  code{
+  pre code{
     font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", monospace;
     padding: 1em;
     border-radius: 10px;
     font-size: 0.876rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto; 
   }
+
+
+
+/* 
+
+article + div {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+pre {
+  white-space: pre-wrap; /* Preserve formatting but allow wrapping */
+  word-wrap: break-word; /* Break long words if necessary */
+  word-break: break-word; /* Break long words */
+}

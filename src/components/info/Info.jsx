@@ -16,7 +16,7 @@ function Info()
             <div className={`${classes.links}`}>
                 <a href="/blog">/blog</a>
                 <a href="#">/projects</a>
-                <a href="#">/chat</a>
+                <a href="#">/social</a>
             </div>
 
 
@@ -28,11 +28,7 @@ function Info()
     </p>
 
 
-    {/* <div className={`${classes.social}`}>
-        <a href="https://www.linkedin.com/in/yusef-samir-b2855021b/" target="_blank">/Linkedin</a>
-        <a href="https://github.com/Youssef-001" target="_blank">/Github</a>
-        <a href="https://leetcode.com/u/Yusef0x1/" target="_blank">/Leetcode</a>
-    </div> */}
+
 
     </div>
     
