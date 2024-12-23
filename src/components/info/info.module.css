@@ -25,11 +25,21 @@ h1{
 
 .social{
     display:flex;
-    gap: 1rem
+    gap: 1rem;
+    color: #FFA07A
 }
 
 .avatar{
     border-radius: 50%;
     max-width: 20rem;
 
+}
+
+
+.links{
+    display:flex;
+    gap: 1rem;
+    font-size: 1.2rem;;
+    line-height: 24px;
+    color: #FFA07A
 }

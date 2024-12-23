@@ -14,13 +14,13 @@ function Header()
     return <>
     
     <nav>
-        <h2 className={`${classes.name}`}>Yusef0x1.dev</h2>
+        <a href="/" className={`${classes.name}`}>Yusef0x1.dev</a>
 
-        <div className={`${classes.links}`}>
+        {/* <div className={`${classes.links}`}>
             <a href="/blog">/blog</a>
             <a href="#">/projects</a>
             <a href="#">/chat</a>
-        </div>
+        </div> */}
 
         {url[1] === '' && decodedToken?.username === 'admin' && token ? (
   <a href="blog/create" className={`${classes.create_post}`}>
