@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     padding: 5rem;
-    margin-top: 5rem;
+    margin-top: 1rem;
     gap: 4rem;
 }
 
@@ -37,4 +37,8 @@ main{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+.blogs{
+    font-size:2rem;
 }

@@ -3,7 +3,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 body{
@@ -99,7 +99,7 @@ gap: 1rem;
   }
 
   .comments form {
-    width: 100%;
+    width: 80%;
   }
 
   .comments button{

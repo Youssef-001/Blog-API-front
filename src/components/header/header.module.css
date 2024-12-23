@@ -35,18 +35,18 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1.4rem;
-    padding: 0.8rem 1.6rem; /* Add padding for better spacing */
+    padding: 0.6rem 1rem; /* Add padding for better spacing */
     background-color: #333; /* Background color */
     color: #fff; /* Text color */
     border-radius: 8px; /* Rounded corners */
     text-decoration: none; /* Remove underline */
-    font-size: 1rem; /* Adjust text size */
+    font-size: 0.7rem; /* Adjust text size */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .create_post svg {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     transition: transform 0.3s ease; /* Smooth transition for icon on hover */
 }
 

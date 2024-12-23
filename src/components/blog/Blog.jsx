@@ -52,7 +52,7 @@ function Blog()
         return (
             <>
             <Header/>
-            <h1>My blogs</h1>
+            <h1 className={`${classes.blogs}`}>My blogs</h1>
 
             <main>
 
