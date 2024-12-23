@@ -21,16 +21,22 @@ function Post({date, thumbnail, title, description, postId})
     return (<div className={`${classes.post}`}>
 
 
-        <a href={"/blog/"+postId}>
+
+        <a className={`${classes.card}`} href={"/blog/"+postId}>
         <time dateTime={date}>
             <a className={`${classes.link}`} href = {"/blog/"+postId}>{date}</a>
         </time>
-
         <img className={`${classes.thumbnail}`} src={thumbnail} onLoad={handleImageLoad} alt="" />
+
+
+
+        <div>
+
+        </div>
         
         </a>
 
-        <h2>{title}</h2>
+        <h2 className={`${classes.card_title}`}>{title}</h2>
         {isLoading && <div className={`${classes.circular_spinner}`}></div>} 
 
 

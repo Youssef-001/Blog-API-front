@@ -54,6 +54,8 @@ function Blog()
             <Header/>
             <h1>My blogs</h1>
 
+            <main>
+
           <div className={`${classes.posts}`}>
             {data.map((post)  => { let cover = `http://localhost:4001/${post.cover}`;return(
               <Post 
@@ -66,6 +68,7 @@ function Blog()
               />
             )})}
           </div>
+            </main>
           </>
         );
       }

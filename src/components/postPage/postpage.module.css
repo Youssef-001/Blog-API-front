@@ -118,3 +118,11 @@ gap: 1rem;
   article{
     margin-top: 5rem;
   }
+
+
+  code{
+    font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", monospace;
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 0.876rem;
+  }
