@@ -168,7 +168,7 @@ return (
 
     <time dateTime={[post.created_at]}>{post.created_at}</time>
 
-    <h1>{post.title}</h1>
+    <h1 className={`${classes.title}`}>{post.title}</h1>
 
                 
 <article>

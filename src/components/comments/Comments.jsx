@@ -34,7 +34,7 @@ function Comments({comments, setComments})
         
         <h2>Comments ({comments.length})</h2>
 
-        <form  onSubmit={handleCommentSubmit}>
+        <form className={`${classes.comment_form}`}  onSubmit={handleCommentSubmit}>
             <input value={name} onChange={(e) => {setName(e.target.value)}} name="name" type="text" placeholder='your name'/>
             <textarea value={comment} rows="12" colr="20" onChange={(e) => {setComment(e.target.value)}} name="comment" id="comment" placeholder='Add a comment'></textarea>
 
